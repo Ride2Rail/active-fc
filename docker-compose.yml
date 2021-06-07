@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  active-fc:
+    container_name: active-fc
+    build: .
+    ports:
+      - "5005:5000"
+    environment:
+      FLASK_ENV: development
+    networks:
+      - offer-enhancer-net
+
+networks:
+  offer-enhancer-net:
+    external:
+      name: trias-extractor_offer-enhancer-net
+
+
